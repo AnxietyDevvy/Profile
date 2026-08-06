@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi, I'm Anxiety or Skye!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background: linear-gradient(135deg, #c8f0d8, #a8e0c8, #d4f0e2);
+      font-family: 'Fredoka', system-ui, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Cute floating frogs */
+    .frog {
+      position: absolute;
+      font-size: 2.5rem;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: float 25s infinite linear;
+      z-index: -1;
+    }
+
+    .frog:nth-child(2) { animation-delay: -5s; font-size: 2rem; }
+    .frog:nth-child(3) { animation-delay: -12s; font-size: 3rem; top: 30%; }
+    .frog:nth-child(4) { animation-delay: -18s; font-size: 2.2rem; }
+    .frog:nth-child(5) { animation-delay: -22s; font-size: 1.8rem; top: 60%; }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+    
+    .notepad {
+      background: #fffdf0;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+                  6px 6px 0 #e5e7eb;
+      position: relative;
+      border: 3px solid #f1e4c4;
+    }
+    
+    .notepad::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        transparent 0px,
+        transparent 28px,
+        #f8f1d9 28px,
+        #f8f1d9 29px
+      );
+      opacity: 0.65;
+      pointer-events: none;
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body class="pb-12">
+
+  <!-- Floating Frogs -->
+  <div class="frog" style="left: 10%;">🐸</div>
+  <div class="frog" style="left: 25%;">🐸</div>
+  <div class="frog" style="left: 45%;">🐸</div>
+  <div class="frog" style="left: 65%;">🐸</div>
+  <div class="frog" style="left: 85%;">🐸</div>
+
+  <!-- Header -->
+  <header class="text-center py-16 px-6">
+    <div class="max-w-lg mx-auto">
+      <h1 class="text-6xl font-bold text-black mb-3 drop-shadow-sm">Anxiety or Skye!</h1>
+      <p class="text-3xl text-black">Pronouns: <span class="font-medium">they/them</span></p>
+      <p class="mt-6 text-xl text-black max-w-md mx-auto">Haii! I'm Anxiety. I'm non-binary and I love frogs! If you found this website, then you already know me from Discord, but feel free to DM me if you have any questions! ✨</p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 space-y-12">
+
+    <!-- Likes -->
+    <div class="notepad rounded-3xl p-9 max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold text-emerald-800 mb-6">Things I Like!</h2>
+      <ul class="space-y-4 text-xl text-gray-700">
+        <li>• Coding</li>
+        <li>• Cuppachino, Playing games, Friendly and kind people!</li>
+        <li>• I like coding and making bots that could help with tasks, and cute bots that could confort people! I currently have 6 bots, and 3 websites I made myself!</li>
+      </ul>
+    </div>
+
+    <!-- Dislikes -->
+    <div class="notepad rounded-3xl p-9 max-w-2xl mx-auto">
+      <h2 class="text-4xl font-bold text-emerald-800 mb-6">Things I Dislike</h2>
+      <ul class="space-y-4 text-xl text-gray-700">
+        <li>• Rude/Mean people</li>
+        <li>• S H R I M P</li>
+        <li>• The dark(as of recently), and being left alone for long periods of time irl</li>
+      </ul>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="notepad rounded-3xl p-9">
+      <h2 class="text-4xl font-bold text-emerald-800 mb-8">Current Hobbies</h2>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="bg-white/80 rounded-2xl p-6 border border-emerald-100">
+          <h3 class="font-bold text-2xl text-emerald-700 mb-2">Coding, well as of recently!</h3>
+          <p class="text-gray-600">I started coding again because I use to do it 3 years ago, but I've learned alot more and I find it really enjoyable to find fixes for mistakes, and to make usefull bots that could help people in a day to day life! well on discord, hehehe</p>
+        </div>
+        <div class="bg-white/80 rounded-2xl p-6 border border-emerald-100">
+          <h3 class="font-bold text-2xl text-emerald-700 mb-2">Designing and Robotics!</h3>
+          <p class="text-gray-600">Ive been designing for about 6 years now and I REALLY love it. Mainly because I love art! I've also recently got into robotics! I'm in the beginning stages of my very own deskpet!(or desk companion)</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="text-center text-black mt-20 py-8 text-lg">
+    Made with ❤️ • Anxiety 2026
+  </footer>
+
+</body>
+</html>

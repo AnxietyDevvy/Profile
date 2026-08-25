@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games | Anxiety or Skye!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: linear-gradient(135deg, #c8f0d8, #a8e0c8, #d4f0e2); font-family: 'Fredoka', system-ui, sans-serif; min-height: 100vh; animation: pageFadeIn 700ms ease-out both; }
+    .notepad { background: #fffdf0; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 6px 6px 0 #e5e7eb; border: 3px solid #f1e4c4; }
+    .nav-link { transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease; }
+    .nav-link:hover, .nav-link:focus-visible { background-color: #d1fae5; color: #065f46; box-shadow: 0 8px 14px rgb(6 95 70 / 0.15); transform: translateY(-3px); }
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { body { animation: none; } .nav-link { transition: background-color 200ms ease, color 200ms ease; } .nav-link:hover, .nav-link:focus-visible { transform: none; } }
+  </style>
+</head>
+<body class="px-6 py-10 text-black">
+  <header class="mx-auto max-w-3xl text-center">
+    <nav class="mb-10 flex flex-wrap justify-center gap-3" aria-label="Main navigation">
+      <a href="index.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Home</a>
+      <a href="games.html" class="nav-link rounded-full bg-emerald-800 px-5 py-2 text-lg font-medium text-white shadow-sm">Games</a>
+      <a href="top-songs.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Top Songs</a>
+    </nav>
+    <h1 class="text-6xl font-bold drop-shadow-sm">Games</h1>
+    <p class="mt-4 text-xl">A separate little corner for the games I enjoy.</p>
+  </header>
+  <main class="mx-auto mt-12 max-w-3xl">
+    <section class="notepad rounded-3xl p-8 sm:p-10">
+      <h2 class="mb-6 text-4xl font-bold text-emerald-800">Games I Like</h2>
+      <ul class="space-y-4 text-xl text-gray-700">
+        <li>• Marvel Rivals</li>
+        <li>• Palworld</li>
+        <li>• Marvel Rivals, currently maining Jeff and Pheonix</li>
+        <li>• CloverPit (we love a little bit of Gamba)</li>
+        <li>• RV there yet?</li>
+        <li>• Assasins Creed Black Flag (best one ever)</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="py-12 text-center text-lg">Made with ❤️ • Anxiety 2026</footer>
+</body>
+</html>

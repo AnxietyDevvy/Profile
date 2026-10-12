@@ -1,0 +1,133 @@
+:root {
+  color-scheme: dark;
+  --night: #09090a;
+  --plum: #151416;
+  --plum-light: #292326;
+  --wine: #790f20;
+  --candle: #c42136;
+  --bone: #e5dddd;
+  --muted: #b4a9aa;
+  --line: rgb(196 33 54 / 58%);
+}
+
+body {
+  color: var(--bone);
+  background-color: var(--night);
+  background-image:
+    linear-gradient(rgb(7 6 8 / 76%), rgb(7 6 8 / 82%)),
+    radial-gradient(circle at 18% 27%, rgb(255 255 255 / 10%) 0 0.6px, transparent 1px),
+    radial-gradient(circle at 72% 64%, rgb(255 255 255 / 8%) 0 0.7px, transparent 1.2px),
+    url("Images/red_eyes.gif"),
+    radial-gradient(ellipse at 50% 0%, #21171b 0%, #100f11 48%, var(--night) 100%);
+  background-position: center, 0 0, 0 0, center, center;
+  background-size: cover, 17px 19px, 23px 21px, cover, auto;
+  background-attachment: fixed, scroll, scroll, fixed, fixed;
+  background-repeat: no-repeat, repeat, repeat, no-repeat, no-repeat;
+  font-family: 'DM Sans', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--bone);
+  font-family: 'UnifrakturCook', Georgia, serif;
+}
+
+header h1.text-6xl {
+  color: var(--bone);
+  font-size: 3.5rem;
+  line-height: 1;
+  text-shadow: 0 2px 18px rgb(196 33 54 / 38%);
+}
+
+.notepad {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background:
+    linear-gradient(145deg, rgb(24 21 23 / 97%), rgb(12 12 13 / 98%));
+  box-shadow: 0 18px 44px rgb(0 0 0 / 48%), inset 0 0 0 4px rgb(196 33 54 / 5%);
+}
+
+.nav-link {
+  border: 1px solid var(--line);
+  background: var(--plum) !important;
+  color: var(--bone) !important;
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.nav-link[aria-current="page"] {
+  border-color: #e13b4e;
+  background: var(--wine) !important;
+  color: #fff7eb !important;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-color: #e13b4e;
+  background: var(--plum-light) !important;
+  color: #fff7eb !important;
+  box-shadow: 0 5px 18px rgb(0 0 0 / 28%);
+  transform: translateY(-2px);
+}
+
+.text-black,
+.text-gray-700 {
+  color: var(--bone);
+}
+
+header .intro-copy {
+  color: #dc143c;
+}
+
+.text-gray-600 {
+  color: var(--muted);
+}
+
+.text-emerald-800,
+.text-emerald-700 {
+  color: var(--candle);
+}
+
+.notepad h2.text-4xl {
+  color: var(--candle);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  text-shadow: 0 2px 14px rgb(196 33 54 / 20%);
+}
+
+.notepad .grid > div {
+  border-color: var(--line);
+  border-radius: 6px;
+  background: rgb(8 8 9 / 72%);
+}
+
+.frog {
+  color: var(--candle);
+  filter: grayscale(1) sepia(0.6) hue-rotate(300deg) drop-shadow(0 0 8px rgb(196 33 54 / 22%));
+}
+
+footer {
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  header h1.text-6xl {
+    font-size: 2.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+
+  .nav-link,
+  .nav-link:hover,
+  .nav-link:focus-visible {
+    transform: none;
+    transition: none;
+  }
+}

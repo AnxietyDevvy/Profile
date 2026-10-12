@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hi, I'm Anxiety or Skye!</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   
   <style>
     body {
@@ -34,19 +34,8 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .profile-sprite {
-      animation: spriteFloat 4s ease-in-out infinite;
-      filter: drop-shadow(0 12px 8px rgb(6 95 70 / 0.2));
-    }
-
-    @keyframes spriteFloat {
-      0%, 100% { transform: translateY(0) rotate(-1deg); }
-      50% { transform: translateY(-10px) rotate(1deg); }
-    }
-
     @media (prefers-reduced-motion: reduce) {
       body { animation: none; }
-      .profile-sprite { animation: none; }
       .nav-link { transition: background-color 200ms ease, color 200ms ease; }
       .nav-link:hover,
       .nav-link:focus-visible { transform: none; }
@@ -80,25 +69,11 @@
       border: 3px solid #f1e4c4;
     }
     
-    .notepad::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        transparent 0px,
-        transparent 28px,
-        #f8f1d9 28px,
-        #f8f1d9 29px
-      );
-      opacity: 0.65;
-      pointer-events: none;
-      border-radius: 8px;
-    }
-
     h1, h2, h3 {
       font-weight: 700;
     }
   </style>
+  <link rel="stylesheet" href="theme.css">
 </head>
 <body class="pb-12">
 
@@ -112,15 +87,14 @@
   <!-- Header -->
   <header class="text-center py-16 px-6">
     <nav class="max-w-lg mx-auto mb-12 flex flex-wrap justify-center gap-3" aria-label="Main navigation">
-      <a href="index.html" class="nav-link rounded-full bg-emerald-800 px-5 py-2 text-lg font-medium text-white shadow-sm">Home</a>
+      <a href="index.html" aria-current="page" class="nav-link rounded-full bg-emerald-800 px-5 py-2 text-lg font-medium text-white shadow-sm">Home</a>
       <a href="games.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Games</a>
       <a href="top-songs.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Top Songs</a>
     </nav>
     <div class="max-w-lg mx-auto">
-      <img src="Images/profile-sprite.png" alt="Anxiety or Skye character sprite" class="profile-sprite mx-auto mb-8 h-72 w-auto object-contain">
       <h1 class="text-6xl font-bold text-black mb-3 drop-shadow-sm">Anxiety or Skye!</h1>
-      <p class="text-3xl text-black">Pronouns: <span class="font-medium">they/them</span></p>
-      <p class="mt-6 text-xl text-black max-w-md mx-auto">Haii! I'm Anxiety. I'm non-binary and I love frogs! If you found this website, then you already know me from Discord, but feel free to DM me if you have any questions! ✨</p>
+      <p class="intro-copy text-3xl text-black">Pronouns: <span class="font-medium">they/them</span></p>
+      <p class="intro-copy mt-6 text-xl text-black max-w-md mx-auto">Haii! I'm Anxiety. I'm non-binary and I love frogs! If you found this website, then you already know me from Discord, but feel free to DM me if you have any questions! ✨</p>
     </div>
   </header>
 

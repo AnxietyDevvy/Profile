@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Progress | Anxiety or Skye!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body { min-height: 100vh; animation: pageFadeIn 700ms ease-out both; }
+    .nav-link { transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease; }
+    @keyframes pageFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .progress-page { max-width: 64rem; }
+    .notepad.progress-frame { background-image: url("Images/border.png"), linear-gradient(145deg, rgb(24 21 23 / 97%), rgb(12 12 13 / 98%)); background-position: center top, center; background-size: 100% auto, 100% 100%; background-repeat: no-repeat; }
+    .focus-panel { display: grid; gap: 2rem; }
+    .focus-label, .game-status { color: #dc143c; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .focus-details { display: flex; align-items: center; gap: 1rem; }
+    .focus-portrait, .hero-portrait { width: 7rem; height: 10rem; flex: 0 0 auto; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 0 14px rgb(220 20 60 / 24%)); }
+    .focus-heading { margin-top: 0.25rem; color: #f1e7d7; font-family: 'UnifrakturCook', Georgia, serif; font-size: 2.25rem; line-height: 1.1; }
+    .focus-game { margin-top: 0.35rem; color: #b4a9aa; }
+    .focus-score { align-self: center; color: #e5dddd; font-size: 1.25rem; font-weight: 600; white-space: nowrap; }
+    .focus-score strong { color: #dc143c; font-size: 3rem; line-height: 1; }
+    .meter-label { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; color: #e5dddd; font-size: 0.9rem; }
+    .progress-meter { display: block; width: 100%; height: 0.7rem; overflow: hidden; appearance: none; border: 0; border-radius: 999px; background: #292326; }
+    .progress-meter::-webkit-progress-bar { border-radius: 999px; background: #292326; }
+    .progress-meter::-webkit-progress-value { border-radius: 999px; background: linear-gradient(90deg, #790f20, #dc143c); }
+    .progress-meter::-moz-progress-bar { border-radius: 999px; background: linear-gradient(90deg, #790f20, #dc143c); }
+    .meter-caption { margin-top: 0.55rem; color: #b4a9aa; font-size: 0.85rem; }
+    .section-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .section-heading h2 { color: #e5dddd; font-family: 'UnifrakturCook', Georgia, serif; font-size: 2rem; }
+    .section-heading p { color: #b4a9aa; font-size: 0.9rem; }
+    .hero-card { display: grid; gap: 1rem; }
+    .hero-card-top { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+    .hero-card-id { display: flex; min-width: 0; align-items: center; gap: 0.8rem; }
+    .hero-card h3 { overflow: hidden; color: #f1e7d7; font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 600; text-overflow: ellipsis; }
+    .hero-score { flex: 0 0 auto; color: #b4a9aa; font-size: 0.9rem; }
+    .hero-score strong { color: #dc143c; font-size: 1.3rem; }
+    .hero-card .progress-meter { height: 0.55rem; }
+    .hero-card .meter-label { margin-bottom: 0; font-size: 0.8rem; }
+    @media (min-width: 640px) { .focus-panel { grid-template-columns: minmax(0, 1fr) auto; align-items: center; } .focus-meter { grid-column: 1 / -1; } }
+    @media (max-width: 420px) { .focus-details { align-items: flex-start; flex-direction: column; gap: 0.75rem; } .focus-portrait, .hero-portrait { width: 5rem; height: 7rem; } .hero-card-top { gap: 0.5rem; } .hero-card-id { gap: 0.45rem; } .hero-card h3 { font-size: 0.95rem; } .hero-score { font-size: 0.8rem; } .hero-score strong { font-size: 1.15rem; } }
+    @media (prefers-reduced-motion: reduce) { body { animation: none; } .nav-link { transition: none; } }
+  </style>
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body class="px-6 py-10 text-black">
+  <header class="progress-page mx-auto text-center">
+    <nav class="mb-10 flex flex-wrap justify-center gap-3" aria-label="Main navigation">
+      <a href="index.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Home</a>
+      <a href="games.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Games</a>
+      <a href="progress.html" aria-current="page" class="nav-link rounded-full bg-emerald-800 px-5 py-2 text-lg font-medium text-white shadow-sm">Game Progress</a>
+      <a href="top-songs.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Top Songs</a>
+    </nav>
+    <h1 class="text-6xl font-bold drop-shadow-sm">Game Progress</h1>
+    <p class="mt-4 text-xl text-gray-700">Heroes and games I’m currently tracking.</p>
+  </header>
+  <main class="progress-page mx-auto mt-12 space-y-10">
+    <section class="notepad progress-frame focus-panel rounded-3xl p-7 sm:p-10" aria-labelledby="focus-title">
+      <div class="focus-details">
+        <img class="focus-portrait" src="Images/strange.png" alt="">
+        <div>
+          <p class="focus-label">Current focus · Marvel Rivals</p>
+          <h2 id="focus-title" class="focus-heading">Dr. Strange</h2>
+          <p class="focus-game">Hero proficiency</p>
+        </div>
+      </div>
+      <p class="focus-score"><strong>12</strong> / 20</p>
+      <div class="focus-meter">
+        <div class="meter-label"><span>Proficiency</span><span>12 of 20</span></div>
+        <progress class="progress-meter" value="12" max="20" aria-label="Dr. Strange proficiency: 12 of 20">60%</progress>
+        <p class="meter-caption">60% of the way to maximum proficiency</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="other-heroes-title">
+      <div class="section-heading">
+        <h2 id="other-heroes-title">Hero progress</h2>
+        <p>Marvel Rivals proficiency</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <article class="notepad progress-frame hero-card rounded-3xl p-6">
+          <div class="hero-card-top">
+            <div class="hero-card-id"><img class="hero-portrait" src="Images/phoenix.png" alt=""><h3>Phoenix</h3></div>
+            <p class="hero-score"><strong>7</strong> / 20</p>
+          </div>
+          <div class="meter-label"><span>Proficiency</span><span>35%</span></div>
+          <progress class="progress-meter" value="7" max="20" aria-label="Phoenix proficiency: 7 of 20">35%</progress>
+        </article>
+        <article class="notepad progress-frame hero-card rounded-3xl p-6">
+          <div class="hero-card-top">
+            <div class="hero-card-id"><img class="hero-portrait" src="Images/white_fox.png" alt=""><h3>White Fox</h3></div>
+            <p class="hero-score"><strong>7</strong> / 20</p>
+          </div>
+          <div class="meter-label"><span>Proficiency</span><span>35%</span></div>
+          <progress class="progress-meter" value="7" max="20" aria-label="White Fox proficiency: 7 of 20">35%</progress>
+        </article>
+        <article class="notepad progress-frame hero-card rounded-3xl p-6">
+          <div class="hero-card-top">
+            <div class="hero-card-id"><img class="hero-portrait" src="Images/cyclops.png" alt=""><h3>Cyclops</h3></div>
+            <p class="hero-score"><strong>10</strong> / 20</p>
+          </div>
+          <div class="meter-label"><span>Proficiency</span><span>50%</span></div>
+          <progress class="progress-meter" value="10" max="20" aria-label="Cyclops proficiency: 10 of 20">50%</progress>
+        </article>
+        <article class="notepad progress-frame hero-card rounded-3xl p-6">
+          <div class="hero-card-top">
+            <div class="hero-card-id"><img class="hero-portrait" src="Images/magneto.png" alt=""><h3>Magneto</h3></div>
+            <p class="hero-score"><strong>20</strong> / 50</p>
+          </div>
+          <div class="meter-label"><span>Proficiency</span><span>40%</span></div>
+          <progress class="progress-meter" value="20" max="50" aria-label="Magneto proficiency: 20 of 50">40%</progress>
+        </article>
+        <article class="notepad progress-frame hero-card rounded-3xl p-6">
+          <div class="hero-card-top">
+            <div class="hero-card-id"><img class="hero-portrait" src="Images/moon_knight.png" alt=""><h3>Moon Knight</h3></div>
+            <p class="hero-score"><strong>20</strong> / 50</p>
+          </div>
+          <div class="meter-label"><span>Proficiency</span><span>40%</span></div>
+          <progress class="progress-meter" value="20" max="50" aria-label="Moon Knight proficiency: 20 of 50">40%</progress>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="py-12 text-center text-lg">Made with ❤️ • Anxiety 2026</footer>
+</body>
+</html>

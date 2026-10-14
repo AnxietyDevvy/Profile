@@ -10,6 +10,17 @@
   --line: rgb(196 33 54 / 58%);
 }
 
+:root[data-theme="forest"] {
+  --night: #101b13;
+  --plum: #17261b;
+  --plum-light: #2f4732;
+  --wine: #486337;
+  --candle: #d0d9a2;
+  --bone: #f0efd9;
+  --muted: #d5d8bd;
+  --line: rgb(178 197 140 / 52%);
+}
+
 body {
   color: var(--bone);
   background-color: var(--night);
@@ -73,6 +84,29 @@ header h1.text-6xl {
   transform: translateY(-2px);
 }
 
+.theme-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--bone);
+  font-size: 0.9rem;
+}
+
+.theme-picker select {
+  min-height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.35rem 0.55rem;
+  background: var(--plum);
+  color: var(--bone);
+  font: inherit;
+}
+
+.theme-picker select:focus-visible {
+  outline: 2px solid var(--candle);
+  outline-offset: 2px;
+}
+
 .text-black,
 .text-gray-700 {
   color: var(--bone);
@@ -107,6 +141,115 @@ header .intro-copy {
 .frog {
   color: var(--candle);
   filter: grayscale(1) sepia(0.6) hue-rotate(300deg) drop-shadow(0 0 8px rgb(196 33 54 / 22%));
+}
+
+:root[data-theme="forest"] body {
+  background-color: var(--night);
+  background-image:
+    linear-gradient(rgb(8 17 10 / 43%), rgb(8 17 10 / 55%)),
+    url("Images/fwoggy.png"),
+    url("Images/mushroom.png"),
+    url("Images/leaf_corner.png"),
+    url("Images/mossy_corner.png"),
+    url("Images/cozy_background.png");
+  background-position: center, left 2vw bottom 1rem, right 2vw bottom 1rem, left top, right top, center;
+  background-size: cover, clamp(4.5rem, 10vw, 8rem) auto, clamp(5.5rem, 12vw, 9rem) auto, clamp(9rem, 17vw, 15rem) auto, clamp(13rem, 25vw, 22rem) auto, cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+:root[data-theme="forest"] h1,
+:root[data-theme="forest"] h2,
+:root[data-theme="forest"] h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+:root[data-theme="forest"] header h1.text-6xl {
+  text-shadow: 0 2px 18px rgb(21 38 24 / 55%);
+}
+
+:root[data-theme="forest"] .notepad {
+  border-color: var(--line);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgb(24 39 27 / 94%), rgb(13 25 18 / 96%));
+  box-shadow: 0 18px 44px rgb(0 0 0 / 35%), inset 0 0 0 4px rgb(208 217 162 / 5%);
+}
+
+:root[data-theme="forest"] .notepad.progress-frame {
+  background-image: linear-gradient(145deg, rgb(24 39 27 / 94%), rgb(13 25 18 / 96%));
+}
+
+:root[data-theme="forest"] .nav-link[aria-current="page"] {
+  border-color: #d0d9a2;
+  background: #486337 !important;
+  color: #f4f1dc !important;
+}
+
+:root[data-theme="forest"] .nav-link:hover,
+:root[data-theme="forest"] .nav-link:focus-visible {
+  border-color: #d0d9a2;
+  background: #2f4732 !important;
+  color: #f4f1dc !important;
+}
+
+:root[data-theme="forest"] .text-black,
+:root[data-theme="forest"] .text-gray-700 {
+  color: var(--bone);
+}
+
+:root[data-theme="forest"] .text-gray-600 {
+  color: var(--muted);
+}
+
+:root[data-theme="forest"] .text-emerald-800,
+:root[data-theme="forest"] .text-emerald-700 {
+  color: var(--candle);
+}
+
+:root[data-theme="forest"] header .intro-copy,
+:root[data-theme="forest"] .notepad h2.text-4xl,
+:root[data-theme="forest"] .focus-label,
+:root[data-theme="forest"] .game-status,
+:root[data-theme="forest"] .focus-score strong,
+:root[data-theme="forest"] .hero-score strong {
+  color: #d0d9a2;
+}
+
+:root[data-theme="forest"] .focus-heading,
+:root[data-theme="forest"] .section-heading h2 {
+  color: #f0efd9;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+:root[data-theme="forest"] .focus-portrait,
+:root[data-theme="forest"] .hero-portrait {
+  filter: drop-shadow(0 0 14px rgb(167 194 126 / 26%));
+}
+
+:root[data-theme="forest"] .progress-meter {
+  background: #34442f;
+}
+
+:root[data-theme="forest"] .progress-meter::-webkit-progress-bar {
+  background: #34442f;
+}
+
+:root[data-theme="forest"] .progress-meter::-webkit-progress-value {
+  background: linear-gradient(90deg, #536d3b, #c1d28c);
+}
+
+:root[data-theme="forest"] .progress-meter::-moz-progress-bar {
+  background: linear-gradient(90deg, #536d3b, #c1d28c);
+}
+
+:root[data-theme="forest"] .notepad .grid > div {
+  border-color: var(--line);
+  background: rgb(15 29 19 / 72%);
+}
+
+:root[data-theme="forest"] .frog {
+  opacity: 0.26;
+  filter: drop-shadow(0 0 8px rgb(181 205 135 / 24%));
 }
 
 footer {

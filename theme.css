@@ -84,29 +84,6 @@ header h1.text-6xl {
   transform: translateY(-2px);
 }
 
-.theme-picker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--bone);
-  font-size: 0.9rem;
-}
-
-.theme-picker select {
-  min-height: 2.5rem;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 0.35rem 0.55rem;
-  background: var(--plum);
-  color: var(--bone);
-  font: inherit;
-}
-
-.theme-picker select:focus-visible {
-  outline: 2px solid var(--candle);
-  outline-offset: 2px;
-}
-
 .text-black,
 .text-gray-700 {
   color: var(--bone);

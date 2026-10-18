@@ -7,139 +7,69 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
   
-  <style>
-    body {
-      background: linear-gradient(135deg, #c8f0d8, #a8e0c8, #d4f0e2);
-      font-family: 'Fredoka', system-ui, sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-      animation: pageFadeIn 700ms ease-out both;
-    }
-
-    .nav-link {
-      transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus-visible {
-      background-color: #d1fae5;
-      color: #065f46;
-      box-shadow: 0 8px 14px rgb(6 95 70 / 0.15);
-      transform: translateY(-3px);
-    }
-
-    @keyframes pageFadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      body { animation: none; }
-      .nav-link { transition: background-color 200ms ease, color 200ms ease; }
-      .nav-link:hover,
-      .nav-link:focus-visible { transform: none; }
-    }
-
-    /* Cute floating frogs */
-    .frog {
-      position: absolute;
-      font-size: 2.5rem;
-      opacity: 0.15;
-      pointer-events: none;
-      animation: float 25s infinite linear;
-      z-index: -1;
-    }
-
-    .frog:nth-child(2) { animation-delay: -5s; font-size: 2rem; }
-    .frog:nth-child(3) { animation-delay: -12s; font-size: 3rem; top: 30%; }
-    .frog:nth-child(4) { animation-delay: -18s; font-size: 2.2rem; }
-    .frog:nth-child(5) { animation-delay: -22s; font-size: 1.8rem; top: 60%; }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) rotate(0deg); }
-      100% { transform: translateY(-100vh) rotate(360deg); }
-    }
-    
-    .notepad {
-      background: #fffdf0;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-                  6px 6px 0 #e5e7eb;
-      position: relative;
-      border: 3px solid #f1e4c4;
-    }
-    
-    h1, h2, h3 {
-      font-weight: 700;
-    }
-  </style>
   <link rel="stylesheet" href="theme.css">
   <script src="site.js" defer></script>
 </head>
 <body class="pb-12">
-
-  <!-- Floating Frogs -->
-  <div class="frog" style="left: 10%;">🐸</div>
-  <div class="frog" style="left: 25%;">🐸</div>
-  <div class="frog" style="left: 45%;">🐸</div>
-  <div class="frog" style="left: 65%;">🐸</div>
-  <div class="frog" style="left: 85%;">🐸</div>
-
-  <!-- Header -->
-  <header class="text-center py-16 px-6">
-    <nav class="max-w-lg mx-auto mb-12 flex flex-wrap justify-center gap-3" aria-label="Main navigation">
+  <header class="site-header px-6 pt-8">
+    <nav class="max-w-4xl mx-auto mb-8 flex flex-wrap justify-center gap-2" aria-label="Main navigation">
       <a href="index.html" aria-current="page" class="nav-link rounded-full bg-emerald-800 px-5 py-2 text-lg font-medium text-white shadow-sm">Home</a>
       <a href="games.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Games</a>
       <a href="progress.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Game Progress</a>
       <a href="top-songs.html" class="nav-link rounded-full bg-white/80 px-5 py-2 text-lg font-medium text-emerald-800 shadow-sm">Top Songs</a>
     </nav>
-    <div class="max-w-lg mx-auto">
-      <h1 class="text-6xl font-bold text-black mb-3 drop-shadow-sm">Anxiety or Skye!</h1>
-      <p class="intro-copy text-3xl text-black">Pronouns: <span class="font-medium">they/them</span></p>
-      <p class="intro-copy mt-6 text-xl text-black max-w-md mx-auto">Haii! I'm Anxiety. I'm non-binary and I love frogs! If you found this website, then you already know me from Discord, but feel free to DM me if you have any questions! ✨</p>
-    </div>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 space-y-12">
+  <main class="profile-layout max-w-5xl mx-auto px-6 pb-8">
+    <aside class="notepad profile-card p-6">
+      <img class="profile-portrait" src="Images/MEE.png" alt="Illustrated portrait of Anxiety">
+      <p class="panel-label">PERSONAL PROFILE</p>
+      <h1 class="text-4xl font-bold">Anxiety or Skye!</h1>
+      <p class="profile-pronouns">PRONOUNS: <span>they/them</span></p>
+      <p class="profile-bio">Haii! I'm Anxiety. I'm non-binary and I love frogs! If you found this website, then you already know me from Discord, but feel free to DM me if you have any questions! ✨</p>
+    </aside>
 
-    <!-- Likes -->
-    <div class="notepad rounded-3xl p-9 max-w-2xl mx-auto">
-      <h2 class="text-4xl font-bold text-emerald-800 mb-6">Things I Like!</h2>
-      <ul class="space-y-4 text-xl text-gray-700">
-        <li>• Coding</li>
-        <li>• Cuppachino, Playing games, Friendly and kind people!</li>
-        <li>• I like playing crafter games, such as Planet crafter because I find it relaxing! I would highly recomend it if you haven't seen it before!</li>
-      </ul>
-    </div>
+    <div class="profile-content">
+      <section class="notepad p-7 sm:p-8">
+        <p class="panel-label">WELCOME TO MY CORNER OF THE WEB</p>
+        <h2 class="text-4xl font-bold mb-5">Things I Like!</h2>
+        <ul class="profile-list space-y-3">
+          <li>Coding</li>
+          <li>Cuppachino, Playing games, Friendly and kind people!</li>
+          <li>I like playing crafter games, such as Planet crafter because I find it relaxing! I would highly recomend it if you haven't seen it before!</li>
+        </ul>
+      </section>
 
-    <!-- Dislikes -->
-    <div class="notepad rounded-3xl p-9 max-w-2xl mx-auto">
-      <h2 class="text-4xl font-bold text-emerald-800 mb-6">Things I Dislike</h2>
-      <ul class="space-y-4 text-xl text-gray-700">
-        <li>• Rude/Mean people</li>
-        <li>• S H R I M P</li>
-        <li>• The dark, and being left alone for long periods of time irl ;-;</li>
-      </ul>
-    </div>
+      <div class="profile-columns">
+        <section class="notepad p-6">
+          <p class="panel-label">NOT MY THING</p>
+          <h2 class="text-3xl font-bold mb-4">Things I Dislike</h2>
+          <ul class="profile-list space-y-3">
+            <li>Rude/Mean people</li>
+            <li>S H R I M P</li>
+            <li>The dark, and being left alone for long periods of time irl ;-;</li>
+          </ul>
+        </section>
 
-    <!-- Hobbies -->
-    <div class="notepad rounded-3xl p-9">
-      <h2 class="text-4xl font-bold text-emerald-800 mb-8">Current Hobbies</h2>
-      <div class="grid sm:grid-cols-2 gap-8">
-        <div class="bg-white/80 rounded-2xl p-6 border border-emerald-100">
-          <h3 class="font-bold text-2xl text-emerald-700 mb-2">Coding!</h3>
-          <p class="text-gray-600">I started coding again because I use to do it 3 years ago! I have made a custom software for a company aswell, and continue to make other web apps for personal use, and for servers aswell!</p>
-        </div>
-        <div class="bg-white/80 rounded-2xl p-6 border border-emerald-100">
-          <h3 class="font-bold text-2xl text-emerald-700 mb-2">Playing Games!</h3>
-          <p class="text-gray-600">Ive been playing games basically all my life, and I enjoy it alot! I currently am really enjoying Marvel Rivals, even tho it makes me mad, I still love it. I'm currently Maining White Fox, Phoenix, Cyclops and Dr.Strange!</p>
-        </div>
+        <section class="notepad p-6">
+          <p class="panel-label">CURRENTLY INTO</p>
+          <h2 class="text-3xl font-bold mb-4">Current Hobbies</h2>
+          <div class="hobby-list space-y-4">
+            <div>
+              <h3 class="font-bold text-xl mb-1">Coding!</h3>
+              <p class="text-gray-600">I started coding again because I use to do it 3 years ago! I have made a custom software for a company aswell, and continue to make other web apps for personal use, and for servers aswell!</p>
+            </div>
+            <div>
+              <h3 class="font-bold text-xl mb-1">Playing Games!</h3>
+              <p class="text-gray-600">Ive been playing games basically all my life, and I enjoy it alot! I currently am really enjoying Marvel Rivals, even tho it makes me mad, I still love it. I'm currently Maining White Fox, Phoenix, Cyclops and Dr.Strange!</p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-
   </main>
 
-  <footer class="text-center text-black mt-20 py-8 text-lg">
+  <footer class="text-center mt-8 py-8 text-lg">
     Made with ❤️ • Anxiety 2026
   </footer>
 

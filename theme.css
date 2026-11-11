@@ -547,3 +547,173 @@ footer {
     animation: none;
   }
 }
+
+:root[data-theme="cottagecore"] {
+  color-scheme: light;
+  --night: #f3f0e5;
+  --plum: #f8f5eb;
+  --plum-light: #e4ead9;
+  --wine: #75876a;
+  --candle: #8c7155;
+  --bone: #3e4938;
+  --muted: #68715f;
+  --line: rgb(112 132 93 / 48%);
+}
+
+:root[data-theme="cottagecore"] body {
+  background-color: var(--night);
+  background-image:
+    linear-gradient(rgb(247 244 230 / 62%), rgb(247 244 230 / 68%)),
+    url("Images/mushroom.png"),
+    url("Images/leaf_corner.png"),
+    url("Images/mossy_corner.png"),
+    url("Images/cozy_background.png");
+  background-position: center, right 2vw bottom 1rem, left top, right top, center;
+  background-size: cover, clamp(5.5rem, 12vw, 9rem) auto, clamp(9rem, 17vw, 15rem) auto, clamp(13rem, 25vw, 22rem) auto, cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--bone);
+  font-family: 'DM Sans', sans-serif;
+}
+
+:root[data-theme="cottagecore"] h1,
+:root[data-theme="cottagecore"] h2,
+:root[data-theme="cottagecore"] h3,
+:root[data-theme="cottagecore"] .focus-heading,
+:root[data-theme="cottagecore"] .section-heading h2 {
+  color: var(--bone);
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: normal;
+  text-shadow: none;
+}
+
+:root[data-theme="cottagecore"] header h1.text-6xl,
+:root[data-theme="cottagecore"] .profile-card h1 {
+  color: var(--bone);
+  font-family: Georgia, 'Times New Roman', serif;
+  text-shadow: none;
+}
+
+:root[data-theme="cottagecore"] nav[aria-label="Main navigation"] {
+  border-color: var(--line);
+  border-radius: 999px;
+  background: rgb(248 245 235 / 88%);
+  box-shadow: 0 6px 20px rgb(65 75 54 / 12%);
+}
+
+:root[data-theme="cottagecore"] .nav-link {
+  border-color: var(--line);
+  border-radius: 999px !important;
+  background: var(--plum) !important;
+  color: var(--bone) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem !important;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+:root[data-theme="cottagecore"] .nav-link[aria-current="page"] {
+  border-color: var(--wine);
+  background: var(--wine) !important;
+  color: #fffdf5 !important;
+}
+
+:root[data-theme="cottagecore"] .nav-link:hover,
+:root[data-theme="cottagecore"] .nav-link:focus-visible {
+  border-color: var(--wine);
+  background: var(--plum-light) !important;
+  color: var(--bone) !important;
+  box-shadow: 0 4px 12px rgb(65 75 54 / 14%);
+  transform: translateY(-2px);
+}
+
+:root[data-theme="cottagecore"] .notepad {
+  border-color: var(--line);
+  border-radius: 18px !important;
+  background: rgb(250 248 239 / 95%);
+  box-shadow: 0 12px 30px rgb(65 75 54 / 14%);
+}
+
+:root[data-theme="cottagecore"] .notepad.progress-frame {
+  background-image: linear-gradient(145deg, rgb(250 248 239 / 97%), rgb(242 239 224 / 98%));
+}
+
+:root[data-theme="cottagecore"] .notepad::before {
+  height: 3px;
+  background: repeating-linear-gradient(90deg, #9aaa82 0 12px, #c4a982 12px 14px);
+}
+
+:root[data-theme="cottagecore"] .text-black,
+:root[data-theme="cottagecore"] .text-gray-700,
+:root[data-theme="cottagecore"] .profile-list,
+:root[data-theme="cottagecore"] .hobby-list,
+:root[data-theme="cottagecore"] .focus-score,
+:root[data-theme="cottagecore"] .meter-label {
+  color: var(--bone);
+}
+
+:root[data-theme="cottagecore"] .text-gray-600,
+:root[data-theme="cottagecore"] header > p,
+:root[data-theme="cottagecore"] header .text-xl,
+:root[data-theme="cottagecore"] .focus-game,
+:root[data-theme="cottagecore"] .meter-caption,
+:root[data-theme="cottagecore"] .section-heading p,
+:root[data-theme="cottagecore"] .hero-score,
+:root[data-theme="cottagecore"] footer {
+  color: var(--muted);
+}
+
+:root[data-theme="cottagecore"] .text-emerald-800,
+:root[data-theme="cottagecore"] .text-emerald-700,
+:root[data-theme="cottagecore"] .notepad h2.text-4xl,
+:root[data-theme="cottagecore"] .notepad h2.text-3xl,
+:root[data-theme="cottagecore"] .notepad h3,
+:root[data-theme="cottagecore"] .panel-label,
+:root[data-theme="cottagecore"] .focus-label,
+:root[data-theme="cottagecore"] .game-status,
+:root[data-theme="cottagecore"] .focus-score strong,
+:root[data-theme="cottagecore"] .hero-score strong,
+:root[data-theme="cottagecore"] .profile-list li::before {
+  color: var(--candle);
+}
+
+:root[data-theme="cottagecore"] .notepad .grid > div {
+  border-color: var(--line);
+  border-radius: 12px;
+  background: rgb(240 239 224 / 88%);
+}
+
+:root[data-theme="cottagecore"] .profile-portrait,
+:root[data-theme="cottagecore"] .focus-portrait,
+:root[data-theme="cottagecore"] .hero-portrait {
+  filter: drop-shadow(0 4px 8px rgb(65 75 54 / 18%));
+}
+
+:root[data-theme="cottagecore"] .progress-meter,
+:root[data-theme="cottagecore"] .progress-meter::-webkit-progress-bar {
+  border-radius: 999px;
+  background: #e3e5d5;
+}
+
+:root[data-theme="cottagecore"] .progress-meter {
+  accent-color: #849777;
+}
+
+:root[data-theme="cottagecore"] .progress-meter::-webkit-progress-value {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #849777, #b99572);
+}
+
+:root[data-theme="cottagecore"] .progress-meter::-moz-progress-bar {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #849777, #b99572);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="cottagecore"] .nav-link,
+  :root[data-theme="cottagecore"] .nav-link:hover,
+  :root[data-theme="cottagecore"] .nav-link:focus-visible {
+    transform: none;
+    transition: none;
+  }
+}

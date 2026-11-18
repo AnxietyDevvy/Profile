@@ -550,26 +550,23 @@ footer {
 
 :root[data-theme="cottagecore"] {
   color-scheme: light;
-  --night: #f3f0e5;
-  --plum: #f8f5eb;
-  --plum-light: #e4ead9;
-  --wine: #75876a;
-  --candle: #8c7155;
-  --bone: #3e4938;
-  --muted: #68715f;
-  --line: rgb(112 132 93 / 48%);
+  --night: #f2e4cf;
+  --plum: #fff5e5;
+  --plum-light: #f1d8b2;
+  --wine: #a64e23;
+  --candle: #a64e23;
+  --bone: #49301f;
+  --muted: #765b43;
+  --line: rgb(150 92 45 / 46%);
 }
 
 :root[data-theme="cottagecore"] body {
   background-color: var(--night);
   background-image:
-    linear-gradient(rgb(247 244 230 / 62%), rgb(247 244 230 / 68%)),
-    url("Images/mushroom.png"),
-    url("Images/leaf_corner.png"),
-    url("Images/mossy_corner.png"),
-    url("Images/cozy_background.png");
-  background-position: center, right 2vw bottom 1rem, left top, right top, center;
-  background-size: cover, clamp(5.5rem, 12vw, 9rem) auto, clamp(9rem, 17vw, 15rem) auto, clamp(13rem, 25vw, 22rem) auto, cover;
+    linear-gradient(rgb(61 34 14 / 28%), rgb(61 34 14 / 34%)),
+    url("Images/autumn background.gif");
+  background-position: center, center;
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: var(--bone);
@@ -597,8 +594,8 @@ footer {
 :root[data-theme="cottagecore"] nav[aria-label="Main navigation"] {
   border-color: var(--line);
   border-radius: 999px;
-  background: rgb(248 245 235 / 88%);
-  box-shadow: 0 6px 20px rgb(65 75 54 / 12%);
+  background: rgb(255 245 229 / 91%);
+  box-shadow: 0 6px 20px rgb(73 48 31 / 18%);
 }
 
 :root[data-theme="cottagecore"] .nav-link {
@@ -623,24 +620,24 @@ footer {
   border-color: var(--wine);
   background: var(--plum-light) !important;
   color: var(--bone) !important;
-  box-shadow: 0 4px 12px rgb(65 75 54 / 14%);
+  box-shadow: 0 4px 12px rgb(73 48 31 / 18%);
   transform: translateY(-2px);
 }
 
 :root[data-theme="cottagecore"] .notepad {
   border-color: var(--line);
   border-radius: 18px !important;
-  background: rgb(250 248 239 / 95%);
-  box-shadow: 0 12px 30px rgb(65 75 54 / 14%);
+  background: rgb(255 248 236 / 95%);
+  box-shadow: 0 12px 30px rgb(73 48 31 / 20%);
 }
 
 :root[data-theme="cottagecore"] .notepad.progress-frame {
-  background-image: linear-gradient(145deg, rgb(250 248 239 / 97%), rgb(242 239 224 / 98%));
+  background-image: linear-gradient(145deg, rgb(255 248 236 / 97%), rgb(247 234 214 / 98%));
 }
 
 :root[data-theme="cottagecore"] .notepad::before {
   height: 3px;
-  background: repeating-linear-gradient(90deg, #9aaa82 0 12px, #c4a982 12px 14px);
+  background: repeating-linear-gradient(90deg, #b85b2a 0 12px, #d59a4c 12px 14px);
 }
 
 :root[data-theme="cottagecore"] .text-black,
@@ -680,33 +677,33 @@ footer {
 :root[data-theme="cottagecore"] .notepad .grid > div {
   border-color: var(--line);
   border-radius: 12px;
-  background: rgb(240 239 224 / 88%);
+  background: rgb(247 234 214 / 88%);
 }
 
 :root[data-theme="cottagecore"] .profile-portrait,
 :root[data-theme="cottagecore"] .focus-portrait,
 :root[data-theme="cottagecore"] .hero-portrait {
-  filter: drop-shadow(0 4px 8px rgb(65 75 54 / 18%));
+  filter: drop-shadow(0 4px 8px rgb(73 48 31 / 20%));
 }
 
 :root[data-theme="cottagecore"] .progress-meter,
 :root[data-theme="cottagecore"] .progress-meter::-webkit-progress-bar {
   border-radius: 999px;
-  background: #e3e5d5;
+  background: #ead9bd;
 }
 
 :root[data-theme="cottagecore"] .progress-meter {
-  accent-color: #849777;
+  accent-color: #b85b2a;
 }
 
 :root[data-theme="cottagecore"] .progress-meter::-webkit-progress-value {
   border-radius: 999px;
-  background: linear-gradient(90deg, #849777, #b99572);
+  background: linear-gradient(90deg, #a64e23, #db8a32);
 }
 
 :root[data-theme="cottagecore"] .progress-meter::-moz-progress-bar {
   border-radius: 999px;
-  background: linear-gradient(90deg, #849777, #b99572);
+  background: linear-gradient(90deg, #a64e23, #db8a32);
 }
 
 @media (prefers-reduced-motion: reduce) {
